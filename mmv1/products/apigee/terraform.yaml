@@ -359,6 +359,18 @@ overrides: !ruby/object:Overrides::ResourceOverrides
       test_env_vars:
         org_id: :ORG_ID
         billing_account: :BILLING_ACCT
+  SharedFlowDeployment: !ruby/object:Overrides::Terraform::ResourceOverride
+    import_format: ["organizations/{{org_id}}/environments/{{environment}}/sharedflows/{{sharedflow_id}}/revisions/{{revision}}", "{{org_id}}/{{environment}}/{{sharedflow_id}}/{{revision}}"]
+    examples:
+    - !ruby/object:Provider::Terraform::Examples
+      name: "apigee_sharedflow_deployment_test"
+      primary_resource_id: "apigee_sharedflow_deployment"
+      test_env_vars:
+        org_id: :ORG_ID
+        project: :PROJECT_NAME
+        billing_account: :BILLING_ACCT
+      skip_docs: true
+      skip_vcr: true
 files: !ruby/object:Provider::Config::Files
   # These files have templating (ERB) code that will be run.
   # This is usually to add licensing info, autogeneration notices, etc.

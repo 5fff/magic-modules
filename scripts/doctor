@@ -35,7 +35,7 @@ count_in_path() {
 
 count_in_path "rbenv"
 if [ $found -eq 0 ]; then
-    exitcode=1
+    # exitcode=1
     warn "yel" "   rbenv not found. See https://github.com/rbenv/rbenv for information on installing it."
 else
     warn "grn" "   found!"
