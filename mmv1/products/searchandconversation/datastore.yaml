@@ -65,16 +65,19 @@ parameters:
     immutable: true
     url_param_only: true
 properties:
-  - !ruby/object:Api::Type::Enum
+  - !ruby/object:Api::Type::String
       name: 'industryVertical'
       description: |
         Industry Vertical
       immutable: true
-      values:
-          - :MEDIA
-          - :GENERIC
   - !ruby/object:Api::Type::String
       name: 'displayName'
       description: |
         displayName
       required: true
+  - !ruby/object:Api::Type::Array
+      name: 'solutionTypes'
+      description: |
+        A list of solution types
+      immutable: true
+      item_type: Api::Type::String
